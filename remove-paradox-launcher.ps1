@@ -6,10 +6,10 @@ if ($paradox) {
 }
 Remove-Variable paradox
 
-$path1 = "C:\Users\J\AppData\Roaming\Paradox Interactive"
-$path2 = "C:\Users\J\AppData\Roaming\paradox-launcher-v2"
-$path3 = "C:\Users\J\AppData\Local\Paradox Interactive"
-$path4 = "C:\Users\J\AppData\Local\Programs\Paradox Interactive"
+$path1 = "~\AppData\Roaming\Paradox Interactive"
+$path2 = "~\AppData\Roaming\paradox-launcher-v2"
+$path3 = "~\AppData\Local\Paradox Interactive"
+$path4 = "~\AppData\Local\Programs\Paradox Interactive"
 
 if (Test-Path $path1) {
     del -r $path1
@@ -27,9 +27,6 @@ if (Test-Path $path4) {
     del -r $path4
 }
 
-Remove-Variable path1
-Remove-Variable path2
-Remove-Variable path3
-Remove-Variable path4
-
 Write-Host "Paradox Launcher is removed"
+Write-Host -NoNewLine 'Press any key to continue...';
+$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
